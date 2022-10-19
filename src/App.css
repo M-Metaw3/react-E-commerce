@@ -1,0 +1,13 @@
+.con{
+  border: 1px solid red;
+  text-align: center;
+  color: chartreuse;
+  box-shadow: 5px 5px 5px rgb(107, 100, 100);
+  padding: 10px;
+  margin: 10px;
+}
+/* .dv{
+  border: 1px solid red;
+display: flex;
+justify-content: space-between;
+} */
