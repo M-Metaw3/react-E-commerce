@@ -4,7 +4,7 @@ import './App.css';
 const Image =(props)=>{
 
     return (
-        <div className="dv">
+        <div className="dv" style={{display:"flex" , flexDirection:"row", width:"100%"}}>
             <div className='aa' style={{width:"200px"}}>
             <h1>{props.name}</h1>
             <h6>{props.age}</h6>
