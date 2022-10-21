@@ -1,8 +1,12 @@
 .image{
-    width: 100%;
+    width: 80%;
 
-    height: 60vh;
-    background-position: center;
+    height: 90vh;
+   margin: auto;
+
+}
+.con{
+text-align: center;
 
 }
 .container{

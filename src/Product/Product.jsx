@@ -1,18 +1,39 @@
 import React from 'react';
 import './Product.css'
 import StarIcon from '@mui/icons-material/Star';
- const Product= ({img , rating})=>{
+import { useSelector, useDispatch } from 'react-redux'
+ const Product= ({img , rating , name , price})=>{
+     const st =  useSelector((state)=>state)
+     const dispatch = useDispatch()
+
+
+     
+    const addtocart=()=>{
+            const act ={
+                type:"add to cart",
+                peload:{
+                    name:name,
+                    price :rating,
+                    rating :price, 
+                }
+            
+
+                }
+                dispatch(act)
+
+                } 
+            
+
 
 return (
-
     <div>
 <div className='card'>
 
     <img  src={img} alt="" />
-    <h4>title</h4>
-    <h4>price </h4>
+    <h4>{name}</h4>
+    <h4>{price +" L E "} </h4>
     <div>{Array(rating).fill().map(()=>(<span> <StarIcon style={{color:"yellow"}}/> </span>))} </div>
-    <button>add to cart</button>
+    <button onClick={addtocart}>add to cart</button>
 
 
 
