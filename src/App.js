@@ -7,7 +7,10 @@ import Checkout from "./checkout/Checkout";
 import Error from "./Error/Error";
 class App extends Component {
 
+  componentDidMount(){
 
+        
+  }
 
 
   render() {
