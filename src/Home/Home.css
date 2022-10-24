@@ -1,5 +1,6 @@
 .image{
-    width: 80%;
+    width: 90%;
+    border-radius: 5px;
 
     height: 90vh;
    margin: auto;

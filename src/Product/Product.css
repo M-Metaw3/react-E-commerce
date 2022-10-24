@@ -1,9 +1,20 @@
+.container{
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
 .card{
     margin: 10px;
     border: 1px solid black;
     text-align: center;
     width: 200px;
-    height: 280px;
+    height: 340px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
     
 }
@@ -12,4 +23,12 @@
     height:100px;
     border-radius: 5px;
     
+}
+.btn{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
 }

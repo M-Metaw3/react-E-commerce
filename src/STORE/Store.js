@@ -1,21 +1,31 @@
+import { act } from '@testing-library/react'
 import {createStore} from 'redux'
 
 let initstate={
     products:[],
     counter:0,
-   totalPrice:0
+   totalPrice:0,
+   search:""
 
 
 }
  const reducer =( state = initstate, action)=>{
 
-     
+    if(action.type === "search" ){
+        return {...state ,search: action.payload  }
+
+
+    }
      
      if(action.type === "add to cart" ){
-         
+         console.log(action.peload)
+         console.log(state.products)
+         console.log(state.totalPrice)
+
+
          state.products.push(action.peload)
         //  state.totalPrice.push(action.peload.rating)
-        state.totalPrice+=action.peload.rating
+        state.totalPrice+=action.peload.price
         //  state.products.map((el)=>{ state.totalPrice+=el.rating})
         //  console.log(state.totalPrice)
         //  console.log(state.products)

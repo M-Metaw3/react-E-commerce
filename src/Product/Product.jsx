@@ -2,19 +2,23 @@ import React from 'react';
 import './Product.css'
 import StarIcon from '@mui/icons-material/Star';
 import { useSelector, useDispatch } from 'react-redux'
- const Product= ({img , rating , name , price})=>{
-     const st =  useSelector((state)=>state)
+ const Product= ({name})=>{
+     const st =  useSelector((state)=>state.search)
+
+
+
+    
      const dispatch = useDispatch()
-
-
-     
-    const addtocart=()=>{
+    const addtocart=(i)=>{
             const act ={
                 type:"add to cart",
                 peload:{
-                    name:name,
-                    price :rating,
-                    rating :price, 
+                   name:name[i].title,
+                   price:name[i].price,
+                   rating:name[i].rating,
+
+
+
                 }
             
 
@@ -23,28 +27,70 @@ import { useSelector, useDispatch } from 'react-redux'
 
                 } 
             
+if (st.length==0) {
+    return (
+        
+        <div className='container'>
+            {    name.map((el,idx)=>(
+         
+       <div className='card'>
+   
+       <img  src={el.image} alt="" />
+       <h6>{el.title}</h6>
+       <div>{Array(Math.round( el.rating.rate)).fill().map((el)=>(<span> <StarIcon style={{color:"yellow"}}/> </span>))} </div>
+       <h4>{el.price + "  L E "} </h4>
+      
+       <button onClick={()=>addtocart(idx)}>add to cart</button>
+   
+   
+   </div>
+         
+   
+            ))}
+   </div>
+   
+   )
+    
+}
+
+else if (st!=""){
+     const a= name.filter((el)=> el.title.toLowerCase().includes(st) )
+    return (
+   <div className='container'>
+{a.map((e,idx)=>(
 
 
-return (
-    <div>
+
 <div className='card'>
+   
+<img  src={e.image} alt="" />
+<h6>{e.title}</h6>
+<div>{Array(Math.round( e.rating.rate)).fill().map((el)=>(<span> <StarIcon style={{color:"yellow"}}/> </span>))} </div>
+<h4>{e.price + "  L E "} </h4>
 
-    <img  src={img} alt="" />
-    <h4>{name}</h4>
-    <h4>{price +" L E "} </h4>
-    <div>{Array(rating).fill().map(()=>(<span> <StarIcon style={{color:"yellow"}}/> </span>))} </div>
-    <button onClick={addtocart}>add to cart</button>
-
-
-
-
+<button onClick={()=>addtocart(idx)}>add to cart</button>
 
 
 </div>
 
 
-    </div>
+
+
+
+
+
+
+
+
+
+
+))}
+    
+   </div>
+
 )
+}
+
 
 
  }

@@ -14,17 +14,17 @@ const Checkout = ()=>{
 <>
         <div >
             <h1>{el.name}</h1>
-            <h1>{el.rating}</h1>
+            <h1>{el.price}</h1>
            
-            <div>{Array(el.price).fill().map(()=>(<span> <StarIcon style={{color:"yellow"}}/> </span>))} </div>
-
+            <div>{Array(Math.round(el. rating.rate)).fill().map(()=>(<span> <StarIcon style={{color:"yellow"}}/> </span>))} </div>
+    
         </div>
         </>
     ))
         
     return(  
         <div>
-<h1>total price is {totalprice}</h1>
+<h1>total price is {totalprice.toFixed(2)}</h1>
           {card}
         
         

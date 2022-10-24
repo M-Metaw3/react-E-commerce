@@ -1,31 +1,62 @@
 import React from 'react';
+import {  Route ,Routes ,BrowserRouter } from "react-router-dom";
+
 import Product from '../Product/Product';
 import './Home.css'
 import { Component } from "react";
+import { useSelector, useDispatch } from 'react-redux'
+import { useState } from 'react';
 
  class Home extends Component  {
+  
+
+
+
+state = {
+    pro:[],
+
+}
+
+
+
+
+ 
+      
 
     componentDidMount(){
-
-        
+        fetch('https://fakestoreapi.com/products')
+        .then(res=>res.json())
+        .then(json=> this.setState({pro:json})  )
+   
+         
+       
     }
-render(){
+    
+    
+    
+    
+    render(){
+
+
+        console.log(this.x)
+
+
+
 return (
     <div className='con'>
 
 
-    <img className='image' src="https://images.pexels.com/photos/6214476/pexels-photo-6214476.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" />
+
+    {/* <img className='image' src="https://fifreedomtoday.com/wp-content/uploads/2022/10/showing-cart-trolley-shopping-online-sign-graphic_53876-133967-1.jpeg" alt="" /> */}
 
 
 
     <div className='container'>
-<Product img="https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg?auto=compress&cs=tinysrgb&w=600" rating={5} name={"a"} price={4000 }/>
-<Product img="https://images.pexels.com/photos/335257/pexels-photo-335257.jpeg?auto=compress&cs=tinysrgb&w=600" rating={3} name={"z"} price={1027}/>
-<Product img="https://images.pexels.com/photos/248412/pexels-photo-248412.jpeg?auto=compress&cs=tinysrgb&w=600" rating={4} name={"y"} price={8700} />
-<Product img="https://images.pexels.com/photos/4158/apple-iphone-smartphone-desk.jpg?auto=compress&cs=tinysrgb&w=600" rating={1} name={"x"} price={2400}/>
-<Product img="https://images.pexels.com/photos/3819969/pexels-photo-3819969.jpeg?auto=compress&cs=tinysrgb&w=600" rating={2} name={"t"} price={2000}/>
 
 
+{
+    <Product name={this.state.pro}/>
+}
 
 
 
