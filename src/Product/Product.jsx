@@ -53,7 +53,7 @@ if (st.length==0) {
     
 }
 
-else if (st!=""){
+else  {
      const a= name.filter((el)=> el.title.toLowerCase().includes(st) )
     return (
    <div className='container'>
