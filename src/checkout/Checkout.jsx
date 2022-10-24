@@ -13,10 +13,11 @@ const Checkout = ()=>{
     const card = product.map((el)=>(
 <>
         <div >
-            <h1>{el.name}</h1>
-            <h1>{el.price}</h1>
+            <img src={el.image} width="100px"/>
+            <h6>{el.name}</h6>
+            <h4>{el.price}</h4>
            
-            <div>{Array(Math.round(el. rating.rate)).fill().map(()=>(<span> <StarIcon style={{color:"yellow"}}/> </span>))} </div>
+            <p>{Array(Math.round(el. rating.rate)).fill().map(()=>(<span> <StarIcon style={{color:"yellow"}}/> </span>))} </p>
     
         </div>
         </>

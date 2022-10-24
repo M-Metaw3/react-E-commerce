@@ -6,24 +6,35 @@ import { useSelector, useDispatch } from 'react-redux'
      const st =  useSelector((state)=>state.search)
 
 
+     const product = useSelector((state)=>state.products)
 
     
      const dispatch = useDispatch()
-    const addtocart=(i)=>{
+    const addtocart=( i)=>{
+        console.log (i)
+      
             const act ={
                 type:"add to cart",
                 peload:{
                    name:name[i].title,
                    price:name[i].price,
                    rating:name[i].rating,
+                   image:name[i].image,
+                   id:name[i].id,
+
+                   
 
 
 
-                }
+
+                
             
 
                 }
-                dispatch(act)
+                
+            }
+            dispatch(act)
+           
 
                 } 
             
