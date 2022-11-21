@@ -5,7 +5,8 @@ let initstate={
     products:[],
     counter:0,
    totalPrice:0,
-   search:""
+   search:"",
+   tot:0
 
 
 }
@@ -37,6 +38,24 @@ let initstate={
 
 
     }
+    if(action.type === "dele" ){
+        // console.log(state.products[action.payload].price)
+       
+
+        // return state.products.splice(splice(action.payload,1),1)
+        return {...state , products :state.products.filter((el,ind)=>ind!=action.payload,1),totalPrice: state.totalPrice-state.products[action.payload].price,counter: state.products.length -1}
+    }
+
+
+    if(action.type === "inpu" ){
+
+        console.log(action.payload)
+        return {...state ,tot: state.tot+action.payload}
+
+    }
+
+
+
     return state
 }
 
